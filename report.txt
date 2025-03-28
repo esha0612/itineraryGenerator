@@ -1,0 +1,13 @@
+ Big O Complexity:
+ 
+ 
+ FlightManager::load_flight_data():
+
+ 
+ If N is the total number of flights that is in the text file, the while loop would run O(N) times becasue it iterates through each line in your txt file if there are N number of flights. For each flight, the program uses a hash table where the key is the source airport and the value being the BST set with all flights leaving this airport. Hash tables have constant time, which is O(1) when inserting into a hashtable. On the other hand, insertion in a BSTSet that through the key of the hash table (source airport) has a time complexity of O(logF), where if F is the number of flights departing each source airport because the BSTSet is in sorted order, whereas hashtables are in unsorted order. In total, the time complexity for load_flight_data is O(N*logF).
+
+FlightManager::find_flights():
+
+    If F is the number of flights departing from the source airport, the BSTSet data structure is used to hold these flights. Searching through this BSTSet has the average time complexity of O(logF), since it is a binary search tree where all values are in sorted order. Then, A is the number of flights between the start time and the end time, so the time complexity is O(A) because the program pushes each flight back in a vector. Finding the source airport is in the hashtable which has a time complexity of O(1) since it is in unsourted order, making it more efficient to find the airport. In total, the time complexity is O(logF) + O(A) + 0(1), which is equivqalent to s O(logF + A), since the 1 is ignored as it takes the dominant term.
+
+
